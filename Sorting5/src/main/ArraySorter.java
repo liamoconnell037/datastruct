@@ -19,7 +19,9 @@ public class ArraySorter
       for (int index = 0; index < n - 1; index++)
       {
          int indexOfNextSmallest = getIndexOfSmallest(a, index, n - 1);
+     
          swap(a, index, indexOfNextSmallest);
+         Main.printArray(a);
          // Assertion: a[0] <= a[1] <= . . . <= a[index] <= all other a[i]
       } // end for
    } // end selectionSort
@@ -74,9 +76,9 @@ public class ArraySorter
       
 		while ((index >= begin) && (anEntry.compareTo(a[index]) < 0))
 		{
-			Main.printArray(a);
 			a[index + 1] = a[index]; // Make room
          index--;
+         Main.printArray(a);
 		} // end for
 		
 		// Assertion: a[index + 1] is available
