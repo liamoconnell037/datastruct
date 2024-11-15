@@ -11,7 +11,7 @@ public class Client {
 	public static int passengersOnTrains = 0;
 	public static int passengersDelivered = 0;
 	public static int passengersWaiting = 0;
-	
+	public static int passengersCreated = 0;
 	public static void main(String[] args) {
 		ArrayList<Station> stations = new ArrayList<>();
 		LinkedQueue<Train> trains = new LinkedQueue<>();
@@ -26,15 +26,20 @@ public class Client {
 			generatePassengers(passengers, stations);
 			moveTrains(trains, stations, i);
 		}
-		finalReport(TIME_INTERVAL, passengersWaiting, passengers);
+		finalReport(TIME_INTERVAL, passengersCreated, passengers);
+		
 	}
 	public static void createStations(ArrayList<Station> stations) {
+
+		//Create stations
 		for(int i = 0;i < NUM_STATIONS;i++) {
-			stations.add(new Station((int)(Math.random()*5+14)));
+			//Create a random time to the next station (between 5 and 14)
+			stations.add(new Station((int)(Math.random()*10+5)));
 			System.out.println("New station: " + stations.get(i));
-			passengersWaiting++;
 		}
 	}
+
+	//Creates a new train if the time is a multiple of the train interval, adds train to the queue
 	public static void startNewTrain(LinkedQueue<Train> trains, int time) {
 		if(time % TRAIN_INTERVAL == 0) {
 			trains.enqueue(new Train(TRAIN_CAPACITY));
@@ -43,10 +48,11 @@ public class Client {
 	}
 	
 	public static void generatePassengers(LinkedQueue<Passenger> passengers, ArrayList<Station> stations) {
+		//Create a random number of passengers (between 1 and 5)
 		for(int i = 0; i < (int)(Math.random()*5+1);i++) {
 			int start = (int)(Math.random()*NUM_STATIONS);
 			int end = (int)(Math.random()*NUM_STATIONS);
-			while(start >= end) {
+			while(start >= end) { //Ensure the start is less than the end
 				start = (int)(Math.random()*NUM_STATIONS);
 				end = (int)(Math.random()*NUM_STATIONS);
 			}
@@ -54,6 +60,7 @@ public class Client {
 			stations.get(start).addPassenger(pass);
 			passengers.enqueue(pass);
 			passengersWaiting++;
+			passengersCreated++;
 		}
 	}
 	
@@ -62,20 +69,20 @@ public class Client {
 		for(int i = 0; i < numTrains;i++) {
 			Train train = trains.dequeue();
 			train.move();
-			
-			if(train.timeToNext() == 0) { 
+			if(train.timeToNext() == 0) { //if the train has reached the next station
 				int left = train.unloadPassengers(train.nextStation());
 				passengersOnTrains -= left;
 				passengersDelivered += left;
 				int on = train.loadPassengers(stations.get(train.nextStation()), time);
 				passengersOnTrains += on;
 				passengersWaiting -= on;
-				train.updateStation(1);
+				if(train.nextStation() < NUM_STATIONS) { //if the train has not reached the last station
+					train.updateStation(stations.get(train.nextStation()).getTimeToNextStation());
+				}
 			}
-			if(train.nextStation() < NUM_STATIONS) {
-				train.setTimeToNext(stations.get(train.nextStation()).getTimeToNextStation());
+			if(train.nextStation() < NUM_STATIONS) { 
 				trains.enqueue(train);
-			} else {
+			} else { // do not requeue the train if it has reached the last station
 				trainCount--;
 			}
 		}
