@@ -1,0 +1,300 @@
+Making new contacts list...
+----------------------------------- Contact Manager -----------------------------------
+
+        1. View All Contacts
+        2. Add Contact
+        3. Delete Contact
+        4. Edit Contact
+        5. Search Contact
+        6. Delete All Contacts
+        7. Exit
+
+Enter a number: 2
+
+------------ Add Contact ------------
+
+Enter new contact's name: Mario
+Enter new contact's phone number: fjksdjf 43098 234 jjj
+Enter new contact's age (-1 to skip): 18
+Enter new contact's email (-1 to skip): -1
+----------------------------------- Contact Manager -----------------------------------
+
+        1. View All Contacts
+        2. Add Contact
+        3. Delete Contact
+        4. Edit Contact
+        5. Search Contact
+        6. Delete All Contacts
+        7. Exit
+
+Enter a number: 1
+
+ ------------ Contact List ------------
+
+        Mario
+        Phone Number: (430)-982-34
+        Age: 18
+
+ --------------------------------------
+
+----------------------------------- Contact Manager -----------------------------------
+
+        1. View All Contacts
+        2. Add Contact
+        3. Delete Contact
+        4. Edit Contact
+        5. Search Contact
+        6. Delete All Contacts
+        7. Exit
+
+Enter a number: 4
+
+------------ Edit Contact ------------
+
+ CONTACTS: ---------------------------------
+
+        1. Mario
+
+ --------------------------------------
+
+Enter which contact to edit (or enter -1 to cancel): 2
+
+Contact not found.
+
+
+Enter which contact to edit (or enter -1 to cancel): f
+
+Please enter a valid integer.
+
+
+Enter which contact to edit (or enter -1 to cancel): 1
+
+What would you like to edit?
+        1. Name
+        2. Phone Number
+        3. Age
+        4. Email
+        5. Cancel
+
+Enter your choice: 4
+
+Enter new email: mario@mario.mario
+
+What would you like to edit?
+        1. Name
+        2. Phone Number
+        3. Age
+        4. Email
+        5. Cancel
+
+Enter your choice: 6
+
+Invalid choice. Please try again.
+
+
+What would you like to edit?
+        1. Name
+        2. Phone Number
+        3. Age
+        4. Email
+        5. Cancel
+
+Enter your choice: 2
+
+Enter new phone number: 1234566710
+
+What would you like to edit?
+        1. Name
+        2. Phone Number
+        3. Age
+        4. Email
+        5. Cancel
+
+Enter your choice: 5
+
+ --------------------------------------
+----------------------------------- Contact Manager -----------------------------------
+
+        1. View All Contacts
+        2. Add Contact
+        3. Delete Contact
+        4. Edit Contact
+        5. Search Contact
+        6. Delete All Contacts
+        7. Exit
+
+Enter a number: 1
+
+ ------------ Contact List ------------
+
+        Mario
+        Phone Number: (123)-456-6710
+        Age: 18
+        Email: mario@mario.mario
+
+ --------------------------------------
+
+----------------------------------- Contact Manager -----------------------------------
+
+        1. View All Contacts
+        2. Add Contact
+        3. Delete Contact
+        4. Edit Contact
+        5. Search Contact
+        6. Delete All Contacts
+        7. Exit
+
+Enter a number: 5
+
+------------ Search Contact ------------
+
+Enter name to search: Mario
+
+   CONTACTS: ---------------------
+
+        Name: Mario
+        Phone: (123)-456-6710
+        Age: 18
+        Email: mario@mario.mario
+
+
+   -------------------------------
+
+ --------------------------------------
+----------------------------------- Contact Manager -----------------------------------
+
+        1. View All Contacts
+        2. Add Contact
+        3. Delete Contact
+        4. Edit Contact
+        5. Search Contact
+        6. Delete All Contacts
+        7. Exit
+
+Enter a number: 2
+
+------------ Add Contact ------------
+
+Enter new contact's name: Luigi
+Enter new contact's phone number: abc123451 fd d d 
+Enter new contact's age (-1 to skip): -1
+Enter new contact's email (-1 to skip): -1
+----------------------------------- Contact Manager -----------------------------------
+
+        1. View All Contacts
+        2. Add Contact
+        3. Delete Contact
+        4. Edit Contact
+        5. Search Contact
+        6. Delete All Contacts
+        7. Exit
+
+Enter a number: 1
+
+ ------------ Contact List ------------
+
+        Luigi
+        Phone Number: 123451
+
+ --------------------------------------
+
+        Mario
+        Phone Number: (123)-456-6710
+        Age: 18
+        Email: mario@mario.mario
+
+ --------------------------------------
+
+----------------------------------- Contact Manager -----------------------------------
+
+        1. View All Contacts
+        2. Add Contact
+        3. Delete Contact
+        4. Edit Contact
+        5. Search Contact
+        6. Delete All Contacts
+        7. Exit
+
+Enter a number: 3
+
+------------ Delete Contact ------------
+
+ CONTACTS: ---------------------------------
+
+        1. Luigi
+        2. Mario
+
+ --------------------------------------
+
+Enter which contact to delete (or enter -1 to cancel): 1
+
+Contact deleted.
+
+----------------------------------- Contact Manager -----------------------------------
+
+        1. View All Contacts
+        2. Add Contact
+        3. Delete Contact
+        4. Edit Contact
+        5. Search Contact
+        6. Delete All Contacts
+        7. Exit
+
+Enter a number: 1
+
+ ------------ Contact List ------------
+
+        Mario
+        Phone Number: (123)-456-6710
+        Age: 18
+        Email: mario@mario.mario
+
+ --------------------------------------
+
+----------------------------------- Contact Manager -----------------------------------
+
+        1. View All Contacts
+        2. Add Contact
+        3. Delete Contact
+        4. Edit Contact
+        5. Search Contact
+        6. Delete All Contacts
+        7. Exit
+
+Enter a number: 6
+
+Are you sure you want to delete all contacts? (y/n)
+y
+
+All contacts deleted.
+
+----------------------------------- Contact Manager -----------------------------------
+
+        1. View All Contacts
+        2. Add Contact
+        3. Delete Contact
+        4. Edit Contact
+        5. Search Contact
+        6. Delete All Contacts
+        7. Exit
+
+Enter a number: 1
+
+ ------------ Contact List ------------
+
+
+        No contacts found.
+
+
+----------------------------------- Contact Manager -----------------------------------
+
+        1. View All Contacts
+        2. Add Contact
+        3. Delete Contact
+        4. Edit Contact
+        5. Search Contact
+        6. Delete All Contacts
+        7. Exit
+
+Enter a number: 7
+--------------------------------------- Exiting ---------------------------------------

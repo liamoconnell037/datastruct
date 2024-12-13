@@ -94,6 +94,8 @@ public class App {
         String name = scanner.nextLine();
         System.out.print("Enter new contact's phone number: ");
         String phoneNumber = scanner.nextLine();
+        phoneNumber = phoneNumber.trim();
+        phoneNumber = phoneNumber.replaceAll("[^\\d.]", "");
         phoneNumber = phoneNumber.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1)-$2-$3"); // format it as a phone number
         int age = userInteger("Enter new contact's age (-1 to skip): ", scanner);
         System.out.print("Enter new contact's email (-1 to skip): ");
@@ -129,10 +131,18 @@ public class App {
             System.out.println("\t" + (i + 1) + ". " + contacts.get(i).getName());
         }
         System.out.println("\n --------------------------------------");
-        int choice = userInteger("\nEnter which contact to edit (or enter -1 to cancel): ", scanner);
-        if(choice == -1) {
-            System.out.println("\nDeletion cancelled.\n");
-            return;
+        int choice = 0;
+        while(true) {
+            choice = userInteger("\nEnter which contact to edit (or enter -1 to cancel): ", scanner);
+            if(choice == -1) {
+                System.out.println("\nDeletion cancelled.\n");
+                return;
+            }
+            if(choice > 0 && choice <= contacts.size()) {
+                break;
+            } else {
+                System.out.println("\nContact not found.\n");
+            }
         }
         while(true) {
             System.out.println("\nWhat would you like to edit?");
@@ -148,7 +158,10 @@ public class App {
                 }
                 case 2 -> {
                     System.out.print("\nEnter new phone number: ");
-                    contacts.get(choice - 1).setPhoneNumber(scanner.nextLine().replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1)-$2-$3")); // formatted as phone number
+                    String number = scanner.nextLine();
+                    number = number.trim();
+                    number = number.replaceAll("[^\\d.]", "");
+                    contacts.get(choice - 1).setPhoneNumber(number.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1)-$2-$3")); // formatted as phone number
                 }
                 case 3 -> contacts.get(choice - 1).setAge(userInteger("Enter new age: ", scanner));
                 case 4 -> {

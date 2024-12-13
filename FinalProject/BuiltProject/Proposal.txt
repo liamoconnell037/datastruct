@@ -1,0 +1,13 @@
+
+
+Contacts Manager
+
+A contact manager where the user can add, edit, or delete contacts in a list.
+
+Input - a text-based menu that displays the choices (adding, editing, displaying, deleting). User inputs numbers to select which option they want, and then the appropriate inputs for each choice (like typing in the name of a contact)
+
+Output - Displaying the contacts in alphabetical order, plus appropriate output for each option
+
+ADT - List (ArrayList) of custom object Contact. ArrayLists are easy to sort and use, easy to pick out specific indices. 
+
+Using - Java in VScode

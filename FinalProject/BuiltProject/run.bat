@@ -1,1 +1,1 @@
-start cmd /k "java -jar ./ContactList.jar"
+start cmd /k java -jar ContactList.jar
